@@ -1,7 +1,7 @@
-2. Clases y Objetos en profundidad
-¿Qué es una clase exactamente?
-Una clase es como un molde o blueprint. Define qué atributos (características) y métodos (comportamientos) tendrán los objetos creados a partir de ella.
-python
+#2. Clases y Objetos en profundidad
+#¿Qué es una clase exactamente?
+#Una clase es como un molde o blueprint. Define qué atributos (características) y métodos (comportamientos) tendrán los objetos creados a partir de ella.
+#python
 # Definición de una clase
 class Estudiante:
     """Esta clase representa a un estudiante universitario"""
@@ -53,9 +53,9 @@ estudiante2.agregar_calificacion(78)
 
 print(f"Promedio de Ana: {estudiante1.promedio()}")   # 91.0
 print(f"Promedio de Carlos: {estudiante2.promedio()}") # 78.0
-¿Qué es self exactamente?
-self es una referencia al objeto actual. Cuando llamas a un método, Python automáticamente pasa el objeto como primer argumento.
-python
+#¿Qué es self exactamente?
+#self es una referencia al objeto actual. Cuando llamas a un método, Python automáticamente pasa el objeto como primer argumento.
+#python
 class ExplicacionSelf:
     def metodo_normal(self):
         print(f"self es: {self}")
@@ -68,5 +68,5 @@ obj.metodo_normal()
 # El tipo de self es: <class '__main__.ExplicacionSelf'>
 
 # Lo que Python hace internamente:
-ExplicacionSelf.metodo_normal(obj)  # Es equivalente a obj.metodo_normal()
-Regla importante: El primer parámetro de los métodos de instancia SIEMPRE es self (puedes llamarlo de otra forma, pero NO lo hagas).
+#ExplicacionSelf.metodo_normal(obj)  # Es equivalente a obj.metodo_normal()
+#Regla importante: El primer parámetro de los métodos de instancia SIEMPRE es self (puedes llamarlo de otra forma, pero NO lo hagas).
