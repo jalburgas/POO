@@ -1,25 +1,52 @@
+# archivo: insertar_pokemon.py
 
- while True:
-    print("\n--- MENÚ PRINCIPAL ---")
-    print("1. Opción 1")
-    print("2. Opción 2")
-    print("3. Opción 3")
-    print("4. Salir")
-    
-    opcion = input("Selecciona una opción: ")
-    
-    if opcion == "1":
-        print("Has seleccionado la Opción 1")
-        # Aquí va el código para la opción 1
-    elif opcion == "2":
-        print("Has seleccionado la Opción 2")
-        # Aquí va el código para la opción 2
-    elif opcion == "3":
-        print("Has seleccionado la Opción 3")
-        # Aquí va el código para la opción 3
-    elif opcion == "4":
-        print("¡Hasta luego!")
-        break
-    else:
-        print("Opción no válida. Por favor, elige 1, 2, 3 o 4.")
+from class_pokemon import Pokemon, Pikachu, Charmander
+
+def main():
+    while True:
+        print("\n=== MENÚ PRINCIPAL ===")
+        print("1. Insertar Pokemon")
+        print("2. Salir")
+        
+        opcion_menu = input("\nElige una opción (1-2): ")
+        
+        if opcion_menu == "2":
+            print("¡Hasta luego! Saliendo del programa...")
+            break
+        
+        elif opcion_menu == "1":
+            print("\n=== INSERTAR POKEMON ===")
+            
+            print("\n1. Pokemon básico")
+            print("2. Pikachu")
+            print("3. Charmander")
+            
+            try:
+                opcion = int(input("\nElige una opción (1-3): "))
+                nombre = input("Nombre del Pokemon: ")
+                tipo = input("Tipo del Pokemon: ")
+                
+                if opcion == 1:
+                    pokemon = Pokemon(nombre, tipo)
+                elif opcion == 2:
+                    pokemon = Pikachu(nombre, tipo)
+                elif opcion == 3:
+                    pokemon = Charmander(nombre, tipo)
+                else:
+                    print("Opción no válida")
+                    continue
+                
+                print("\n--- POKEMON CREADO ---")
+                pokemon.descripcion()
+                
+                if isinstance(pokemon, Pikachu):
+                    print(pokemon.ataque())
+                    
+            except ValueError:
+                print("Error: Por favor ingresa un número válido")
+        else:
+            print("Opción no válida. Por favor elige 1 o 2.")
+
+if __name__ == "__main__":
+    main()
    
